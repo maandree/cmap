@@ -1,0 +1,114 @@
+.TH CMAP 1 cmap
+.SH NAME
+cmap \- character selection utility for the terminal
+
+.SH SYNOPSIS
+.B cmap
+[-f
+.IR font-family ]
+[-s
+.RI [ font-size ][\fB/\fP[[ min ]\fB\-\fP[ max ]]]]
+[-B | -S] [-bi]
+
+.SH DESCRIPTION
+.B cmap
+is an interactive terminal utility for browsing and
+copying characters.
+
+.SH OPTIONS
+The
+.B cmap
+utility conforms to the Base Definitions
+volume of POSIX.1-2017,
+.IR "Section 12.2" ,
+.IR "Utility Syntax Guidelines" .
+.PP
+The following options are supported:
+.TP
+.B -B
+Use listing by Unicode block by default.
+.TP
+.B -b
+Use bold font by default
+.TP
+.BR -f \ \fIfont-family\fP
+Use
+.I font-family
+as the default font family.
+.TP
+.B -i
+Use italic or oblique font by default.
+.TP
+.B -S
+Use listing by script by default.
+.TP
+.RI \fB-s\fP\ [ font-size ][\fB/\fP[[ min ]\fB-\fP[ max ]]]
+Set the default font size, in the character
+table, to
+.IR font-size .
+
+Set the minimum font size, in the character
+table, to
+.IR min .
+
+Set the maximum font size, in the character
+table, to
+.IR max .
+
+.SH OPERANDS
+No operands are supported.
+
+.SH ENVIRONMENT VARIABLES
+The execution of
+.B cmap
+is affected by environment variables that affects the
+.BR libterminput (7)
+library.
+
+.SH INTERACTION
+The following keyboard actions are globally recognised:
+.TP
+.B Ctrl+Q
+.TQ
+.B Ctrl+C
+Quit.
+.TP
+.B Ctrl+L
+Redraw program.
+.TP
+.B Ctrl+Z
+Put process in background.
+.TP
+.B Meta+Left
+Make side-pane smaller.
+.TP
+.B Meta+Right
+Make side-pane larger.
+.TP
+.B Tab
+Cycle, forwards, between interface elements.
+.TP
+.B Backtab
+Cycle, backward, between interface elements.
+.PP
+The following keyboard actions are recognised when
+a list or table is focused:
+.TP
+.B Shift+Up
+.TQ
+.B Shift+PageUp
+Scroll up without changing selected element.
+.TP
+.B Shift+Down
+.TQ
+.B Shift+PageDown
+Scroll down without changing selected element.
+.TP
+.B Shift+Left
+Scroll left without changing selected element.
+.TP
+.B Shift+Right
+Scroll right without changing selected element.
+
+.SH SEE ALSO
+.BR gcmap (1)
