@@ -167,10 +167,10 @@ maybe_sat_parse_int_as_uint(const char *s, unsigned int *out, int *setp)
 	*setp = 1;
 	for (; isdigit(*s); s++) {
 		digit = (unsigned int)(*s & 15);
-		if (*out > ((unsigned int)INT_MAX - digit) / 10U)
+		if (*out > ((unsigned int)INT_MAX - digit) / 10u)
 			*out = (unsigned int)INT_MAX;
 		else
-			*out = *out * 10U + digit;
+			*out = *out * 10u + digit;
 	}
 	return s;
 }
@@ -245,13 +245,13 @@ handle_keyboard_input(union libterminput_input *input)
 			if (input->keypress.key == LIBTERMINPUT_LEFT) {
 				automatic_left_pane_width = 0;
 				if (left_pane_width) {
-					left_pane_width -= 1U;
+					left_pane_width -= 1u;
 					goto redraw;
 				}
 			} else if (input->keypress.key == LIBTERMINPUT_RIGHT) {
 				automatic_left_pane_width = 0;
-				if (term_width && left_pane_width < term_width - 1U) {
-					left_pane_width += 1U;
+				if (term_width && left_pane_width < term_width - 1u) {
+					left_pane_width += 1u;
 					goto redraw;
 				}
 			}
